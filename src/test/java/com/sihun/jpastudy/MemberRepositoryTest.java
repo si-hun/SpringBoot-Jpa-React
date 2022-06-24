@@ -1,7 +1,10 @@
 package com.sihun.jpastudy;
 
+import com.sihun.jpastudy.dto.MemberDto;
 import com.sihun.jpastudy.entity.Member;
 import com.sihun.jpastudy.repository.MemberRepository;
+import com.sihun.jpastudy.service.MemberService;
+import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +12,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.transaction.Transactional;
+import java.time.LocalDateTime;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -17,20 +22,27 @@ class MemberRepositoryTest {
     @Autowired
     private MemberRepository memberRepository;
 
+    @Autowired
+    private MemberService memberService;
+
 
     @Test
     @Transactional
     public void testMember() throws Exception {
 
-        Member member = Member.builder()
-                .username("zz")
-                .build();
+        MemberDto memberDto = new MemberDto();
 
-        Member newMember = memberRepository.save(member);
+        memberDto.setUserName("z");
+        memberService.addMember(memberDto);
 
 
     }
 
+    @Test
+    public void findAll(){
+        long cnt = memberRepository.count();
+        List<Member> members = memberRepository.findAll();
+    }
 
 
 }

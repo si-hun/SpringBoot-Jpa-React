@@ -2,11 +2,8 @@ package com.sihun.jpastudy.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
+import javax.persistence.*;
+import java.time.LocalDateTime;
 
 
 @Getter
@@ -14,12 +11,18 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Entity(name="member")
+@Entity(name="nm_member")
 public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String username;
+
+    @Column(length = 30, nullable = false)
+    private String userName;
+
+    @Column(nullable = false)
+    private LocalDateTime regDate;
+
 
 }
