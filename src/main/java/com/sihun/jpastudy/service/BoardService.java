@@ -13,4 +13,6 @@ public interface BoardService {
 
     List<BoardEntity> boardList() throws Exception;
 
+    List<BoardDto> testBoardList() throws Exception;
+
 }

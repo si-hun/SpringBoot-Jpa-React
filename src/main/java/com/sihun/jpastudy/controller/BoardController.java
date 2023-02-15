@@ -42,6 +42,15 @@ public class BoardController {
         return mav;
     }
 
+    @GetMapping("/list/test")
+    public ModelAndView listTest(ModelAndView mav) throws Exception {
+
+
+        mav.addObject("boardList", boardService.testBoardList());
+        mav.setViewName("board/list");
+        return mav;
+    }
+
     @GetMapping("/detail/{idx}")
     public ModelAndView detail(ModelAndView mav) {
 
