@@ -35,9 +35,10 @@ public class BoardController {
     }
 
     @GetMapping("/list")
-    public ModelAndView list(ModelAndView mav) {
-        mav.addObject("");
-        mav.setViewName("list");
+    public ModelAndView list(ModelAndView mav) throws Exception {
+
+        mav.addObject("boardList", boardService.boardList());
+        mav.setViewName("board/list");
         return mav;
     }
 
@@ -45,7 +46,7 @@ public class BoardController {
     public ModelAndView detail(ModelAndView mav) {
 
         mav.addObject("");
-        mav.setViewName("detail");
+        mav.setViewName("board/detail");
         return mav;
     }
 
