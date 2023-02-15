@@ -1,10 +1,9 @@
 package com.sihun.jpastudy;
 
 import com.sihun.jpastudy.dto.MemberDto;
-import com.sihun.jpastudy.entity.Member;
+import com.sihun.jpastudy.entity.MemberEntity;
 import com.sihun.jpastudy.repository.MemberRepository;
 import com.sihun.jpastudy.service.MemberService;
-import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.transaction.Transactional;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -41,7 +39,7 @@ class MemberRepositoryTest {
     @Test
     public void findAll(){
         long cnt = memberRepository.count();
-        List<Member> members = memberRepository.findAll();
+        List<MemberEntity> members = memberRepository.findAll();
     }
 
 

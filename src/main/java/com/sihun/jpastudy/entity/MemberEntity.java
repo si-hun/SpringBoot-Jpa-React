@@ -11,8 +11,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Entity(name="nm_member")
-public class Member {
+@Entity(name="sh_member")
+public class MemberEntity extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,9 +20,6 @@ public class Member {
 
     @Column(length = 30, nullable = false)
     private String userName;
-
-    @Column(nullable = false)
-    private LocalDateTime regDate;
 
 
 }

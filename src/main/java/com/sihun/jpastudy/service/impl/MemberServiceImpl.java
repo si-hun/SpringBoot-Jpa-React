@@ -24,7 +24,6 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public void addMember(MemberDto memberDto) {
-        memberDto.setRegDate(LocalDateTime.now());
         memberRepository.save(memberDto.toEntity());
     }
 }
