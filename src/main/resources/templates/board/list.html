@@ -38,7 +38,7 @@
                 <span th:text="${board.id}"></span>
             </td>
             <td>
-                <a th:href="@{'/board/detail/' + ${board.id}}">
+                <a th:href="@{'/board/view/' + ${board.id}}">
                     <span th:text="${board.title}"></span>
                 </a>
             </td>
@@ -53,9 +53,10 @@
     </table>
 
     <div>
-    <span th:each="pageNum : ${pageList}" th:inline="text">
-        <a th:href="@{'/?page=' + ${pageNum}}">[[${pageNum}]]</a>
-    </span>
+        <th:block th:each="page : ${#numbers.sequence(startPage, endPage)}">
+            <a th:if="${page != nowPage}" th:href="@{/board/list(page = ${page - 1}, searchKeyword = ${param.searchKeyword})}" th:text="${page}"></a>
+            <strong th:if="${page == nowPage}" th:text="${page}" style="color : red"></strong>
+        </th:block>
     </div>
 </div>
 
