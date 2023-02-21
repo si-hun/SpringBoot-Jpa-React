@@ -55,7 +55,7 @@ public class MemberController {
     @GetMapping("/test")
     public ModelAndView test(ModelAndView mav) {
         mav.addObject("test", "zzxczxc");
-        mav.setViewName("hello.html");
+        mav.setViewName("hello");
         return mav;
     }
 
