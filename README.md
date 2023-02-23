@@ -1,2 +1,2 @@
 # jpaStudy
-SpringBoot, Jpa, React
+SpringBoot, Jpa, React, MyBatis
