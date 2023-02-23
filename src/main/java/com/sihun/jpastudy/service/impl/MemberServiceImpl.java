@@ -12,11 +12,11 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-@Transactional
 public class MemberServiceImpl implements MemberService {
 
     private final MemberRepository memberRepository;
 
+    @Transactional
     @Override
     public Optional<MemberDto> getMember(String userName) {
         return memberRepository.findMemberByUserName(userName);
@@ -26,4 +26,6 @@ public class MemberServiceImpl implements MemberService {
     public void addMember(MemberDto memberDto) {
         memberRepository.save(memberDto.toEntity());
     }
+
+
 }
