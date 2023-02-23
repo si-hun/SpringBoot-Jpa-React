@@ -1,2 +1,2 @@
 # jpaStudy
-jpa스터디
+SpringBoot, Jpa, React
