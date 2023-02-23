@@ -16,6 +16,8 @@ public interface BoardService {
 
     Page<BoardEntity> boardList(Pageable pageable) throws Exception;
 
+    List<BoardEntity> findAll() throws Exception;
+
     List<BoardDto> testBoardList() throws Exception;
 
     Optional<BoardEntity> boardView(Long id) throws Exception;

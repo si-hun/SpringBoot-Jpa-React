@@ -23,6 +23,8 @@ public class BoardServiceImpl implements BoardService {
 
     private final BoardRepository boardRepository;
 
+
+
     @Override
     public void addBoard(BoardDto boardDto) throws Exception {
         boardRepository.save(boardDto.toEntity());
@@ -43,5 +45,8 @@ public class BoardServiceImpl implements BoardService {
         return boardMapper.selectBoardList();
     }
 
-
+    @Override
+    public List<BoardEntity> findAll() throws Exception {
+        return boardRepository.findAll();
+    }
 }
