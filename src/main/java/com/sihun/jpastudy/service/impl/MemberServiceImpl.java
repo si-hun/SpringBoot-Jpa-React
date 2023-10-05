@@ -7,25 +7,24 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService {
 
-    private final MemberRepository memberRepository;
+	private final MemberRepository memberRepository;
 
-    @Transactional
-    @Override
-    public Optional<MemberDto> getMember(String userName) {
-        return memberRepository.findMemberByUserName(userName);
-    }
+	@Transactional
+	@Override
+	public Optional<MemberDto> getMember(String userName) {
+		return memberRepository.findMemberByUserName(userName);
+	}
 
-    @Override
-    public void addMember(MemberDto memberDto) {
-        memberRepository.save(memberDto.toEntity());
-    }
+	@Override
+	public void addMember(MemberDto memberDto) {
+		memberRepository.save(memberDto.toEntity());
+	}
 
 
 }
