@@ -26,6 +26,7 @@ dependencies {
     implementation 'junit:junit:4.13.2'
     implementation 'org.projectlombok:lombok:1.18.24'
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0' // MYBATIS
+    implementation group: 'commons-lang', name: 'commons-lang', version: '2.6'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'mysql:mysql-connector-java'
     annotationProcessor 'org.projectlombok:lombok'
