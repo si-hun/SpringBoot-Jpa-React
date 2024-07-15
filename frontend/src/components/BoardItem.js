@@ -7,8 +7,8 @@ const BoardItem = (props) => {
         <Card>
             <Card.Body>
                 <Card.Title>{props.item.title}</Card.Title>
-                <Link to={"/board/view/" + props.item.id} className={"btn btn-primary"} variant={"primary"}/>
-                상세보기
+                <Link to={"/board/view/" + props.item.id} className={"btn btn-primary"} variant={"primary"}  title={"상세보기"}>상세보기</Link>
+                
             </Card.Body>
         </Card>
     );

@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Optional;
+
 @Controller
 @Slf4j
 @RequiredArgsConstructor
@@ -61,12 +63,13 @@ public class BoardController {
     @GetMapping("/view/{id}")
     public ModelAndView boardView(ModelAndView mav, @PathVariable Long id) throws Exception {
 
+        Optional<BoardEntity> boardEntity = boardService.boardView(id);
+
         mav.addObject("board", boardService.boardView(id));
-
-
-        boardService.boardView(id);
-
+        
         mav.setViewName("board/view");
+        
+        
         return mav;
     }
 

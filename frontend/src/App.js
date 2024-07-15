@@ -19,9 +19,7 @@ function App() {
                         <Route path="/board/write" element={<Write/>}/>
                         <Route path="/board/list" element={<List/>}/>
                         <Route path="/board/view/:id" element={<View/>}/>
-
-
-
+                        
                         <Route path="*" element={<NotFound />}></Route>
                     </Routes>
             </div>
