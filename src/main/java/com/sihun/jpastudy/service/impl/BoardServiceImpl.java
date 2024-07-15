@@ -19,34 +19,29 @@ import java.util.Optional;
 @Transactional
 public class BoardServiceImpl implements BoardService {
 
-    private final BoardMapper boardMapper;
+	private final BoardMapper boardMapper;
 
-    private final BoardRepository boardRepository;
+	private final BoardRepository boardRepository;
 
 
+	@Override
+	public void addBoard(BoardDto boardDto) throws Exception {
+		boardRepository.save(boardDto.toEntity());
+	}
 
-    @Override
-    public void addBoard(BoardDto boardDto) throws Exception {
-        boardRepository.save(boardDto.toEntity());
-    }
+	@Override
+	public Page<BoardEntity> boardList(Pageable pageable) throws Exception {
+		return boardRepository.findAll(pageable);
+	}
 
-    @Override
-    public Page<BoardEntity> boardList(Pageable pageable) throws Exception {
-        return boardRepository.findAll(pageable);
-    }
+	@Override
+	public BoardEntity boardView(Long id) throws Exception {
+		Optional<BoardEntity> board = boardRepository.findById(id);
+		return board.orElse(null);
+	}
 
-    @Override
-    public Optional<BoardEntity> boardView(Long id) throws Exception {
-        return boardRepository.findById(id);
-    }
-
-    @Override
-    public List<BoardDto> testBoardList() throws Exception {
-        return boardMapper.selectBoardList();
-    }
-
-    @Override
-    public List<BoardEntity> findAll() throws Exception {
-        return boardRepository.findAll();
-    }
+	@Override
+	public List<BoardEntity> findAll() throws Exception {
+		return boardRepository.findAll();
+	}
 }

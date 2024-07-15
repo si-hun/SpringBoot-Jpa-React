@@ -12,14 +12,12 @@ import java.util.Optional;
 @Service
 public interface BoardService {
 
-    void addBoard(BoardDto boardDto) throws Exception;
+	void addBoard(BoardDto boardDto) throws Exception;
 
-    Page<BoardEntity> boardList(Pageable pageable) throws Exception;
+	Page<BoardEntity> boardList(Pageable pageable) throws Exception;
 
-    List<BoardEntity> findAll() throws Exception;
+	List<BoardEntity> findAll() throws Exception;
 
-    List<BoardDto> testBoardList() throws Exception;
-
-    Optional<BoardEntity> boardView(Long id) throws Exception;
+	BoardEntity boardView(Long id) throws Exception;
 
 }

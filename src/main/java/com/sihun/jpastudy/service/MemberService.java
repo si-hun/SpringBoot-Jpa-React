@@ -12,6 +12,4 @@ public interface MemberService {
 
     void addMember(MemberDto memberDto);
 
-
-
 }

@@ -61,11 +61,9 @@ public class BoardController {
 
 
     @GetMapping("/view/{id}")
-    public ModelAndView boardView(ModelAndView mav, @PathVariable Long id) throws Exception {
-
-        Optional<BoardEntity> boardEntity = boardService.boardView(id);
-
-        mav.addObject("board", boardService.boardView(id));
+    public ModelAndView boardView(ModelAndView mav, BoardDto boardDto) throws Exception {
+        
+        mav.addObject("board", boardService.boardView(boardDto.getId()));
         
         mav.setViewName("board/view");
         
