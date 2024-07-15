@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom";
 const View = () => {
 
 	let {id} = useParams();
+	
 	const [item, setItem] = useState([]);
 
 	useEffect(() => {
@@ -16,13 +17,13 @@ const View = () => {
 			});
 	}, []);
 
-    const { title } = item;
 
 	return (
 		<div>
 			<h1>상세보기</h1>
             <p>
-                <strong>{title}</strong>
+				<strong>번호 {item.id}</strong>
+                <strong>제목 {item.title}</strong>
             </p>
 		</div>
 	);

@@ -26,4 +26,9 @@ public class ApiController {
     public void write(@RequestBody BoardDto boardDto) throws Exception{
         boardService.addBoard(boardDto);
     }
+    
+    @GetMapping("board/view/{id}")
+    public BoardEntity getView(@PathVariable Long id) throws Exception {
+        return boardService.boardView(id);
+    }
 }
