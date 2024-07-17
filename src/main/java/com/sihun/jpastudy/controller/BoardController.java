@@ -36,7 +36,7 @@ public class BoardController {
 
         boardService.addBoard(boardDto);
 
-        mav.setViewName("board/write");
+        mav.setViewName("board/list");
         return mav;
     }
 

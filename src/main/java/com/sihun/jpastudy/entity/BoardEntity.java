@@ -1,10 +1,7 @@
 package com.sihun.jpastudy.entity;
 
+import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.CreatedDate;
-
-import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Getter
 @Setter
