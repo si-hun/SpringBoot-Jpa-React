@@ -80,7 +80,3 @@ task copyReactBuildFiles(type: Copy) {
     from "$frontendDir/build"
     into "$buildDir/resources/main/static"
 }
-
-tasks.bootJar {
-    dependsOn "copyReactBuildFiles"
-}
