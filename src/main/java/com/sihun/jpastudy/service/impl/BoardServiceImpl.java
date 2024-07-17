@@ -2,7 +2,6 @@ package com.sihun.jpastudy.service.impl;
 
 import com.sihun.jpastudy.dto.BoardDto;
 import com.sihun.jpastudy.entity.BoardEntity;
-import com.sihun.jpastudy.mapper.BoardMapper;
 import com.sihun.jpastudy.repository.BoardRepository;
 import com.sihun.jpastudy.service.BoardService;
 import lombok.RequiredArgsConstructor;
@@ -18,8 +17,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Transactional
 public class BoardServiceImpl implements BoardService {
-
-	private final BoardMapper boardMapper;
+	
 
 	private final BoardRepository boardRepository;
 

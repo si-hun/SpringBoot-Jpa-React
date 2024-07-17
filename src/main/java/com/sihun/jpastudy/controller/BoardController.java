@@ -41,7 +41,7 @@ public class BoardController {
     }
 
     @GetMapping("/list")
-    public ModelAndView list(ModelAndView mav, Pageable pageable) throws Exception {
+    public ModelAndView list(ModelAndView mav, Pageable pageable, BoardDto boardDto) throws Exception {
 
         Page<BoardEntity> list = boardService.boardList(pageable);
 
